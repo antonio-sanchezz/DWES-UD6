@@ -105,6 +105,6 @@ echo $persona->__toString() . "<br>";
 
 $trabajador = new Trabajador("Antonio", "11223344A", "M", 80, 172, "Burguer");
 
-echo $trabajador->mostrarCompleto();
+echo $trabajador->__toString();
 
 ?>
