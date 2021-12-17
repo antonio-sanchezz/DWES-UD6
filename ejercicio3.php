@@ -101,10 +101,10 @@ class Trabajador extends Persona {
 
 $persona = new Persona("Antonio", "11223344A", "M", 80, 172);
 
-echo $persona->__toString() . "<br>";
+echo $persona . "<br>";
 
 $trabajador = new Trabajador("Antonio", "11223344A", "M", 80, 172, "Burguer");
 
-echo $trabajador->__toString();
+echo $trabajador;
 
 ?>
