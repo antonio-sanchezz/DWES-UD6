@@ -19,17 +19,17 @@ class Local {
 
     function getArea()
     {
-
+        return $this->area;
     }
 
     function getDimensiones()
     {
-
+        return $this->dimensiones;
     }
 
     function __toString()
     {
-        return "<p>Ciudad: <valor><br></p><p>Calle: <valor><br></p><p>Plantas: <valor><br></p><p>Dimensiones: (<valor>)<br></p>";
+        return "<p>Ciudad: $this->ciudad<br></p><p>Calle: $this->calle<br></p><p>Plantas: $this->numeroPlantas<br></p><p>Dimensiones: ($this->dimensiones)<br></p>";
     }
 
     function __clone()

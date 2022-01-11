@@ -11,7 +11,7 @@ class Cine extends LocalComercial {
 
     function __toString()
     {
-        return "<p><datos del local comercial></p><p>Aforo: <valor><br></p>";
+        return "<p><datos del local comercial></p><p>Aforo: $this->aforoSala<br></p>";
     }
 
 }

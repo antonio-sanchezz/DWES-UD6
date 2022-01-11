@@ -13,7 +13,7 @@ class LocalComercial extends Local {
     
     function __toString()
     {
-        return "<p><datos del local></p><p>Razón Social: <valor><br></p><p>Número de Licencia: <valor><br></p>";
+        return "<p><datos del local></p><p>Razón Social: $this->razonSocial<br></p><p>Número de Licencia: $this->numLicencia<br></p>";
     }
 
 }
