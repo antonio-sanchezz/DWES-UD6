@@ -22,6 +22,9 @@ class Dimensiones {
         }
         
     }
+    function __set($name, $value) {
+        $this->$name = $value;
+    }
 
     function getAlto()
     {

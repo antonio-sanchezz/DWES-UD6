@@ -6,9 +6,9 @@ class LocalComercial extends Local {
     private string $razonSocial;
     private string $numLicencia;
 
-    public function __construct($ciudad, $calle, $numeroPlantas, $dimensiones, $razonSocial, $numLicencia)
+    public function __construct($ciudad, $calle, $numeroPlantas, $dimensiones, $razonSocial, $numLicencia, $area)
     {
-        parent::__construct($ciudad, $calle, $numeroPlantas, $dimensiones);
+        parent::__construct($ciudad, $calle, $numeroPlantas, $dimensiones, $area);
         $this->razonSocial = $this->checkString($razonSocial);
         $this->numLicencia = $this->checkString($numLicencia);
     }

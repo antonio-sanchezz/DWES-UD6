@@ -10,7 +10,7 @@ class Local {
     private float $area;
     private Dimensiones $dimensiones;
 
-    function __construct($ciudad, $calle, $numeroPlantas, $dimensiones)
+    function __construct($ciudad, $calle, $numeroPlantas, $dimensiones, $area)
     {
         $this->ciudad = $this->checkString($ciudad);
         $this->calle =  $this->checkString($calle);
@@ -66,8 +66,7 @@ class Local {
 
     function __clone()
     {
-        $clon = $this->dimensiones;
-        return $clon;
+        return clone $this->dimensiones;
     }
 
 }
