@@ -2,7 +2,7 @@
 
 abstract class FiguraGeometrica {
 
-    static protected $color;
+    protected string $color;
 
     abstract function dibuja();
     abstract function area();
@@ -15,12 +15,12 @@ class Cuadrado extends FiguraGeometrica {
     public function __construct($lado, $color)
     {
         $this->lado = $lado;
-        parent::$color = $color;
+        $this->color = $color;
     }
 
     function dibuja()
     {
-        echo "Cuadrado de color " . parent::$color . ".<br>";
+        echo "Cuadrado de color " . $this->color . ".<br>";
     }
 
     function area()
@@ -38,12 +38,12 @@ class Triangulo extends FiguraGeometrica  {
     {
         $this->base = $base;
         $this->altura = $altura;
-        parent::$color = $color;
+        $this->color = $color;
     }
 
     function dibuja()
     {
-        echo "Triángulo de color " . parent::$color . ".<br>";
+        echo "Triángulo de color " . $this->color . ".<br>";
     }
 
     function area()
@@ -59,12 +59,12 @@ class Circulo extends FiguraGeometrica  {
     public function __construct($radio, $color)
     {
         $this->radio = $radio;
-        parent::$color = $color;
+        $this->color = $color;
     }
 
     function dibuja()
     {
-        echo "Círculo de color " . parent::$color . ".<br>";
+        echo "Círculo de color " . $this->color . ".<br>";
     }
 
     function area()
