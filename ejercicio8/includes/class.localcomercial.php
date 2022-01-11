@@ -9,8 +9,18 @@ class LocalComercial extends Local {
     public function __construct($ciudad, $calle, $numeroPlantas, $dimensiones, $razonSocial, $numLicencia)
     {
         parent::__construct($ciudad, $calle, $numeroPlantas, $dimensiones);
-        $this->razonSocial = $razonSocial;
-        $this->numLicencia = $numLicencia;
+        $this->razonSocial = $this->checkString($razonSocial);
+        $this->numLicencia = $this->checkString($numLicencia);
+    }
+
+    function checkString($string) {
+
+        if (is_string($string)) {
+            return $string;
+        } else {
+            exit("Error, no es una cadena.");
+        }
+
     }
     
     function __toString()
