@@ -1,12 +1,14 @@
 <?php
+include_once("class.local.php");
 
 class LocalComercial extends Local {
 
     private string $razonSocial;
     private string $numLicencia;
 
-    public function __construct($razonSocial, $numLicencia)
+    public function __construct($ciudad, $calle, $numeroPlantas, $dimensiones, $razonSocial, $numLicencia)
     {
+        parent::__construct($ciudad, $calle, $numeroPlantas, $dimensiones);
         $this->razonSocial = $razonSocial;
         $this->numLicencia = $numLicencia;
     }

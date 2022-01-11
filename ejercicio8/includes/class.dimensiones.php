@@ -8,14 +8,19 @@ class Dimensiones {
 
     public function __construct($alto, $ancho, $largo)
     {
-        $this->alto = $alto;
-        $this->ancho = $ancho;
-        $this->largo = $largo;
+        $this->alto = $this->setAlto($alto);
+        $this->ancho = $this->setAncho($ancho);
+        $this->largo = $this->setLargo($largo);
     }
 
     function setAlto($alto)
     {
-        $this->alto = $alto;
+        if (is_float($alto) && $alto > 1) {
+            return $alto;
+        } else {
+            exit("Error, la altura debe ser mayor a 1.");
+        }
+        
     }
 
     function getAlto()
@@ -25,7 +30,11 @@ class Dimensiones {
 
     function setAncho($ancho)
     {
-        $this->ancho = $ancho;
+        if (is_float($ancho) && $ancho > 1) {
+            return $ancho;
+        } else {
+            exit("Error, el ancho debe ser mayor a 1.");
+        }
     }
 
     function getAncho()
@@ -35,7 +44,11 @@ class Dimensiones {
 
     function setLargo($largo)
     {
-        $this->largo = $largo;
+        if (is_float($largo) && $largo > 1) {
+            return $largo;
+        } else {
+            exit("Error, el largo debe ser mayor a 1.");
+        }
     }
 
     function getLargo()
