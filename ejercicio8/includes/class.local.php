@@ -32,6 +32,11 @@ class Local {
         return "<p>Ciudad: <valor><br></p><p>Calle: <valor><br></p><p>Plantas: <valor><br></p><p>Dimensiones: (<valor>)<br></p>";
     }
 
+    function __clone()
+    {
+        
+    }
+
 }
 
 ?>
