@@ -8,11 +8,19 @@
    //print_r($cines[1]);
    $copia = clone $cines[1];
    print_r($copia);
+   /*
    $copia->Dimensiones->alto = 40.;
    $copia->Dimensiones->ancho = 50.;
    $copia->Dimensiones->largo = 60.;
+   */
+   
+   $copia->alto = 40.;
+   $copia->ancho = 50.;
+   $copia->largo = 60.;
+   
    foreach ($cines as $cine)
       echo $cine.'<br>';
    echo $copia;
-   echo 'Área: ' . $copia->area . ' m2';
+   //echo 'Área: ' . $copia->area . ' m2';
+   echo 'Área: ' . $copia->getArea() . ' m2';
 ?>
