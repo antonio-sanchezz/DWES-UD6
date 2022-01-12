@@ -27,10 +27,6 @@ class Cine extends LocalComercial {
         return parent::__toString() . "<p><datos del local comercial></p><p>Aforo: $this->aforoSala<br></p>";
     }
 
-    public function getAforoSala() {
-        return $this->aforoSala;
-    }
-
 }
 
 ?>

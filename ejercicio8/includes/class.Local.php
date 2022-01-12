@@ -48,7 +48,7 @@ class Local {
             return $dimensiones;
         } else 
         {
-            exit("Error, la dimensiones no se han establecido correctamente.");
+            exit("Error, las dimensiones no se han establecido correctamente.");
         }
 
     }
