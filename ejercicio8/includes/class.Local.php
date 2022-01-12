@@ -16,7 +16,7 @@ class Local {
         $this->calle =  $this->checkString($calle);
         $this->numeroPlantas = $this->checkInteger($numeroPlantas);
         $this->dimensiones = $this->checkDimensiones($dimensiones);
-        $this->area = $this->dimensiones->getAncho()*$this->dimensiones->getLargo();
+        $this->area = $this->dimensiones->ancho*$this->dimensiones->largo;
     }
 
     function checkString($string) {
@@ -31,7 +31,7 @@ class Local {
 
     function checkInteger($int) {
 
-        if (is_int($int)) {
+        if (is_int($int) && $int >= 1 && $int <= 10) {
             return $int;
         } else {
             exit("Error, no es un numero.");
