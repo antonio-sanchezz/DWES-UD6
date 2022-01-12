@@ -10,7 +10,6 @@ function __autoload($name)
 
    $copia = clone $cines[1];
 
-   
    $copia->dimensiones->alto = 40.;
    $copia->dimensiones->ancho = 50.;
    $copia->dimensiones->largo = 60.;

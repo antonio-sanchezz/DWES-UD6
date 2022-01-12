@@ -5,7 +5,6 @@ class Local {
     private string $ciudad;
     private string $calle;
     private int $numeroPlantas;
-    private float $area;
     private Dimensiones $dimensiones;
 
     function __construct($ciudad, $calle, $numeroPlantas, $dimensiones)
@@ -18,7 +17,7 @@ class Local {
 
     function checkString($string) {
 
-        if ($string instanceof String) {
+        if (is_string($string)) {
             return $string;
         } else {
             exit("Error, no es una cadena.");
@@ -31,7 +30,7 @@ class Local {
         if (is_int($int) && $int >= 1 && $int <= 10) {
             return $int;
         } else {
-            exit("Error, no es un numero.");
+            exit("Error, el numero debe estar entre 1 y 10.");
         }
 
     }
@@ -58,7 +57,7 @@ class Local {
 
     function __clone()
     {
-        return clone $this->dimensiones;
+        $this->dimensiones = clone $this->dimensiones;
     }
 
 }
