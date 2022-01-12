@@ -1,7 +1,4 @@
 <?php
-
-include_once("class.LocalComercial.php");
-
 class Cine extends LocalComercial {
 
     private int $aforoSala;

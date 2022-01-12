@@ -1,5 +1,4 @@
 <?php
-include_once("class.Local.php");
 
 class LocalComercial extends Local {
 

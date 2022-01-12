@@ -1,7 +1,5 @@
 <?php
 
-include_once("class.Dimensiones.php");
-
 class Local {
 
     private string $ciudad;
