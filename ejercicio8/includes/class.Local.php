@@ -8,18 +8,17 @@ class Local {
     private float $area;
     private Dimensiones $dimensiones;
 
-    function __construct($ciudad, $calle, $numeroPlantas, $dimensiones, $area)
+    function __construct($ciudad, $calle, $numeroPlantas, $dimensiones)
     {
         $this->ciudad = $this->checkString($ciudad);
         $this->calle =  $this->checkString($calle);
         $this->numeroPlantas = $this->checkInteger($numeroPlantas);
         $this->dimensiones = $this->checkDimensiones($dimensiones);
-        $this->area = $this->dimensiones->ancho*$this->dimensiones->largo;
     }
 
     function checkString($string) {
 
-        if (is_string($string)) {
+        if ($string instanceof String) {
             return $string;
         } else {
             exit("Error, no es una cadena.");
@@ -45,11 +44,6 @@ class Local {
             exit("Error, la dimensiones no se han establecido correctamente.");
         }
 
-    }
-
-    function getArea()
-    {
-        return $this->area;
     }
 
     function getDimensiones()

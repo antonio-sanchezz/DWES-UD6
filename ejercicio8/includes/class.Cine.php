@@ -3,11 +3,10 @@ class Cine extends LocalComercial {
 
     private int $aforoSala;
 
-    function __construct($ciudad, $calle, $numeroPlantas, $dimensiones, $razonSocial, $numLicencia, $aforoSala, $area)
+    function __construct($ciudad, $calle, $numeroPlantas, $dimensiones, $razonSocial, $numLicencia, $aforoSala)
     {
-        parent::__construct($ciudad, $calle, $numeroPlantas, $dimensiones, $razonSocial, $numLicencia, $area);
+        parent::__construct($ciudad, $calle, $numeroPlantas, $dimensiones, $razonSocial, $numLicencia);
         $this->aforoSala = $this->checkAforo($aforoSala);
-        $this->area = $area;
         $this->dimensiones = $dimensiones;
     }
 
