@@ -13,19 +13,23 @@ class Dimensiones {
         $this->largo = $largo;
     }
 
-    function __set($name, $value) {
-        if (is_float($value) && $value > 1) {
+    public function __set($name, $value)
+    {
+        if (is_float($value) && $value > 1)
+        {
             $this->$name = $value;
-        } else {
+        } else
+        {
             exit("Error, el valor de las dimensiones debe ser mayor a 1.");
         }  
     }
 
-    function __get($name) {
+    public function __get($name)
+    {
         return $this->$name;
     }
 
-    function __toString()
+    public function __toString()
     {
         return "alto=$this->alto,ancho=$this->ancho,largo=$this->largo";
     }

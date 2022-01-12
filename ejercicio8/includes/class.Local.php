@@ -7,7 +7,7 @@ class Local {
     private int $numeroPlantas;
     private Dimensiones $dimensiones;
 
-    function __construct($ciudad, $calle, $numeroPlantas, $dimensiones)
+    public function __construct($ciudad, $calle, $numeroPlantas, $dimensiones)
     {
         $this->ciudad = $this->checkString($ciudad);
         $this->calle =  $this->checkString($calle);
@@ -15,47 +15,55 @@ class Local {
         $this->dimensiones = $this->checkDimensiones($dimensiones);
     }
 
-    function checkString($string) {
+    private function checkString($string) 
+    {
 
-        if (is_string($string)) {
+        if (is_string($string)) 
+        {
             return $string;
-        } else {
+        } else 
+        {
             exit("Error, no es una cadena.");
         }
 
     }
 
-    function checkInteger($int) {
+    private function checkInteger($int) {
 
-        if (is_int($int) && $int >= 1 && $int <= 10) {
+        if (is_int($int) && $int >= 1 && $int <= 10) 
+        {
             return $int;
-        } else {
+        } else 
+        {
             exit("Error, el numero debe estar entre 1 y 10.");
         }
 
     }
 
-    function checkDimensiones($dimensiones) {
+    private function checkDimensiones($dimensiones) 
+    {
 
-        if ($dimensiones instanceof Dimensiones) {
+        if ($dimensiones instanceof Dimensiones) 
+        {
             return $dimensiones;
-        } else {
+        } else 
+        {
             exit("Error, la dimensiones no se han establecido correctamente.");
         }
 
     }
 
-    function getDimensiones()
+    public function getDimensiones()
     {
         return $this->dimensiones;
     }
 
-    function __toString()
+    public function __toString()
     {
         return "<p>Ciudad: $this->ciudad<br></p><p>Calle: $this->calle<br></p><p>Plantas: $this->numeroPlantas<br></p><p>Dimensiones: ($this->dimensiones)<br></p>";
     }
 
-    function __clone()
+    public function __clone()
     {
         $this->dimensiones = clone $this->dimensiones;
     }

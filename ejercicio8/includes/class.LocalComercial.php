@@ -12,17 +12,20 @@ class LocalComercial extends Local {
         $this->numLicencia = $this->checkString($numLicencia);
     }
 
-    function checkString($string) {
+    private function checkString($string)
+    {
 
-        if (is_string($string)) {
+        if (is_string($string))
+        {
             return $string;
-        } else {
+        } else
+        {
             exit("Error, no es una cadena.");
         }
 
     }
     
-    function __toString()
+    public function __toString()
     {
         return parent::__toString() . "<p><datos del local></p><p>Razón Social: $this->razonSocial<br></p><p>Número de Licencia: $this->numLicencia<br></p>";
     }
