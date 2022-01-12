@@ -1,6 +1,6 @@
 <?php
 
-include_once("class.localcomercial.php");
+include_once("class.LocalComercial.php");
 
 class Cine extends LocalComercial {
 

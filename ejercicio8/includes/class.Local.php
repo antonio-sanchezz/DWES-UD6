@@ -1,6 +1,6 @@
 <?php
 
-include_once("class.dimensiones.php");
+include_once("class.Dimensiones.php");
 
 class Local {
 
