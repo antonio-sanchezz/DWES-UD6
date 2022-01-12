@@ -53,6 +53,11 @@ class Local {
 
     }
 
+    public function __get($name) 
+    {
+        return $this->$name;
+    }
+    
     public function getDimensiones()
     {
         return $this->dimensiones;

@@ -7,7 +7,6 @@ class Cine extends LocalComercial {
     {
         parent::__construct($ciudad, $calle, $numeroPlantas, $dimensiones, $razonSocial, $numLicencia);
         $this->aforoSala = $this->checkAforo($aforoSala);
-        $this->dimensiones = $dimensiones;
     }
 
     private function checkAforo($aforoSala) {
