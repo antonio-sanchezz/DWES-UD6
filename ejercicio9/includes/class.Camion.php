@@ -1,6 +1,6 @@
 <?php
 
-class Camion {
+class Camion extends CuatroRuedas {
 
     private string $longitud;
 
@@ -10,7 +10,7 @@ class Camion {
     }
 
     public function addRemolque($longitudRemolque) {
-
+        $this->longitud += $longitudRemolque;
     }
 
     public function __get($name) {

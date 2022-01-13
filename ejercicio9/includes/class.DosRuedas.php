@@ -1,14 +1,16 @@
 <?php
 
-class DosRuedas {
+class DosRuedas extends Vehiculo {
 
     private int $cilindrada;
-    private int $ponerGasolina;
 
-    function __construct($cilindrada, $ponerGasolina)
+    function __construct($color, $peso)
     {
-        $this->cilindrada = $cilindrada;
-        $this->ponerGasolina = $ponerGasolina;
+        parent::__construct($color, $peso);
+    }
+
+    public function ponerGasolina($litros) {
+        $this->peso += $litros*1.5;
     }
 
     public function __get($name) {

@@ -15,11 +15,4 @@ echo "<br>Peso: ";
 
 echo $vehiculo1->peso . " kg";
 
-
-
-
-
-
-
-
 ?>

@@ -1,14 +1,16 @@
 <?php
 
-class CuatroRuedas {
+class CuatroRuedas extends Vehiculo  {
 
     private int $numeroPuertas;
-    private string $repintar;
     
-    function __construct($numeroPuertas, $repintar)
+    function __construct($color, $peso)
     {
-        $this->numeroPuertas = $numeroPuertas;
-        $this->repintar = $repintar;
+        parent::__construct($color, $peso);
+    }
+
+    public function repintar($color) {
+        $this->color = $color;
     }
 
     public function __get($name) {
