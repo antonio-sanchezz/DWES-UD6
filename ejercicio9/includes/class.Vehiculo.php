@@ -12,11 +12,20 @@ class Vehiculo {
     }
 
     public function circula() {
-
+        echo "El vehículo está circulando";
     }
 
-    public function add_personas($peso_persona) {
+    public function addPersonas($pesoPersona) {
+        $this->peso += $pesoPersona;
+    }
 
+    public function __get($name) {
+        return $this->$name;
+    }
+
+    public function __set($name, $value)
+    {
+        $this->$name = $value;
     }
 
 }
