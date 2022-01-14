@@ -10,6 +10,9 @@ $moto1->addPersonas(70);
 
 echo "Peso: " . $moto1->peso . "<br>";
 
+$moto1->color = "Verde";
+$moto1->cilindrada = 1000;
+
 //$moto1->verAtributo($moto1);
 
 print_r($moto1->verAtributo($moto1));
