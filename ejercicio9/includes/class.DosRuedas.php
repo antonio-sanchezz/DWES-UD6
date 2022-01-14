@@ -4,8 +4,9 @@ class DosRuedas extends Vehiculo {
 
     private int $cilindrada;
 
-    function __construct($color, $peso)
+    function __construct($color, $peso, $cilindrada)
     {
+        $this->cilindrada = $cilindrada;
         parent::__construct($color, $peso);
     }
 
@@ -14,7 +15,11 @@ class DosRuedas extends Vehiculo {
     }
 
     public function __get($name) {
-        return $this->$name;
+        if (property_exists(get_Class(),$name)) {
+            return $this->$name;
+        } else {
+            return parent::__get($name);
+        }
     }
 
     public function __set($name, $value)

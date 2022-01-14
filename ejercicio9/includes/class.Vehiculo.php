@@ -19,6 +19,14 @@ class Vehiculo {
         $this->peso += $pesoPersona;
     }
 
+    public function setPeso($peso) {
+        $this->peso = $peso;
+    }
+
+    public function setColor($color) {
+        $this->color = $color;
+    }
+
     public function __get($name) {
         return $this->$name;
     }

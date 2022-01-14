@@ -4,9 +4,10 @@ class Camion extends CuatroRuedas {
 
     private string $longitud;
 
-    function __construct($longitud)
+    function __construct($color, $peso, $longitud)
     {
         $this->longitud = $longitud;
+        parent::__construct($color, $peso);
     }
 
     public function addRemolque($longitudRemolque) {
@@ -14,7 +15,11 @@ class Camion extends CuatroRuedas {
     }
 
     public function __get($name) {
-        return $this->$name;
+        if (property_exists(get_Class(),$name)) {
+            return $this->$name;
+        } else {
+            return parent::__get($name);
+        }
     }
 
     public function __set($name, $value)

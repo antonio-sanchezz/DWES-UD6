@@ -2,13 +2,12 @@
 
 class Coche extends CuatroRuedas {
 
-    private int $numeroCadenasNieve = 0;
+    private int $numeroCadenasNieve;
 
-    function __construct($color, $peso)
+    function __construct($color, $peso, $numeroCadenasNieve, $numeroPuertas)
     {
-        Vehiculo::__construct($color, $peso);
-        $this->color = $color;
-        $this->peso = $peso;
+        $this->numeroCadenasNieve = $numeroCadenasNieve;
+        parent::__construct($color, $peso, $numeroPuertas);
     }
 
     public function addCadenasNieve($num) {
@@ -20,7 +19,11 @@ class Coche extends CuatroRuedas {
     }
 
     public function __get($name) {
-        return $this->$name;
+        if (property_exists(get_Class(),$name)) {
+            return $this->$name;
+        } else {
+            return parent::__get($name);
+        }
     }
 
     public function __set($name, $value)
