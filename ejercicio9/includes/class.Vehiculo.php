@@ -1,6 +1,6 @@
 <?php
 
-abstract class Vehiculo {
+abstract class Vehiculo implements IVehiculo {
 
     private string $color;
     private float $peso;
