@@ -10,6 +10,14 @@ class Coche extends CuatroRuedas {
         parent::__construct($color, $peso, $numeroPuertas);
     }
 
+    public function addPersonas($pesoPersona)
+    {
+        parent::addPersonas($pesoPersona);
+        if ($this->peso >= 1500 && $this->numeroCadenasNieve <= 2) {
+            return "Atención, ponga 4 cadenas para la nieve.";
+        }
+    }
+
     public function addCadenasNieve($num) {
         $this->numeroCadenasNieve += $num;
     }

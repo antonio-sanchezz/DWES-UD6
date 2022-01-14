@@ -4,10 +4,10 @@ class Camion extends CuatroRuedas {
 
     private string $longitud;
 
-    function __construct($color, $peso, $longitud)
+    function __construct($color, $peso, $numeroPuertas, $longitud)
     {
         $this->longitud = $longitud;
-        parent::__construct($color, $peso);
+        parent::__construct($color, $peso, $numeroPuertas);
     }
 
     public function addRemolque($longitudRemolque) {

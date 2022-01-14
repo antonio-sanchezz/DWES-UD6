@@ -10,6 +10,10 @@ class DosRuedas extends Vehiculo {
         parent::__construct($color, $peso);
     }
 
+    public function addPersonas($pesoPersona) {
+        $this->peso += $pesoPersona + 1.5;
+    }
+
     public function ponerGasolina($litros) {
         $this->peso += $litros*1.5;
     }

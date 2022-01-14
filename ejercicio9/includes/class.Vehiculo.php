@@ -1,9 +1,10 @@
 <?php
 
-class Vehiculo {
+abstract class Vehiculo {
 
     private string $color;
     private float $peso;
+    protected int $numeroCambioColor = 0;
 
     function __construct($color, $peso)
     {
@@ -11,23 +12,31 @@ class Vehiculo {
         $this->color = $color;   
     }
 
+    public static function verAtributo($obj) {
+        return get_object_vars($obj);
+    }
+
     public function circula() {
         echo "El vehículo está circulando";
     }
 
-    public function addPersonas($pesoPersona) {
-        $this->peso += $pesoPersona;
-    }
+    abstract function addPersonas($pesoPersona);
 
     public function setPeso($peso) {
-        $this->peso = $peso;
+        if ($peso < 2100) {
+            $this->peso = $peso;
+        } else {
+            exit("El peso total del vehiculo no puede superar los 2100kg.");
+        }
     }
 
     public function setColor($color) {
         $this->color = $color;
+        $this->numeroCambioColor += 1;
     }
 
-    public function __get($name) {
+    public function __get($name) 
+    {
         return $this->$name;
     }
 
