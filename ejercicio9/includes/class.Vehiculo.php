@@ -39,7 +39,7 @@ abstract class Vehiculo implements IVehiculo {
 
     public function setPeso($peso) {
         if (($this->peso + $peso) <= 2100) {
-            $this->peso = $peso;
+            $this->peso += $peso;
         } else {
             exit("El peso total del vehiculo no puede superar los 2100kg.");
         }
