@@ -18,9 +18,7 @@ echo "Peso: " . $moto1->peso . "<br>";
 $moto1->color = "Verde";
 $moto1->cilindrada = 1000;
 
-//$moto1->verAtributo($moto1);
-
-print_r($moto1->verAtributo($moto1));
+print_r(Vehiculo::verAtributo($moto1));
 
 $camion1 = new Camion('Blanco', 600, 5, 50);
 

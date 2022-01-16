@@ -16,10 +16,18 @@ abstract class Vehiculo implements IVehiculo {
         echo "Color: " . $obj->color . "<br>";
         echo "Peso: " . $obj->peso . "<br>";
         echo "Cambios de color: " . self::$numeroCambioColor . "<br>";
-        echo "Número de puertas: " . $obj->numeroPuertas . "<br>";
-        echo "Número de cadenas de nieve: " . $obj->numeroCadenasNieve . "<br>";
-        echo "Cilindrada: " . $obj->cilindrada . "<br>";
-        echo "Longitud: " . $obj->longitud . "<br>";
+        if (get_class($obj) == "CuatroRuedas") {
+            echo "Número de puertas: " . $obj->numeroPuertas . "<br>";
+        }
+        if (get_class($obj) == "Coche") {
+            echo "Número de cadenas de nieve: " . $obj->numeroCadenasNieve . "<br>";
+        } 
+        if (get_class($obj) == "DosRuedas") {
+            echo "Cilindrada: " . $obj->cilindrada . "<br>";
+        }
+        if (get_class($obj) == "Camion") {
+            echo "Longitud: " . $obj->longitud . "<br>";
+        }
     }
 
     public function circula() {
