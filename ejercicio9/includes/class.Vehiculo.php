@@ -17,7 +17,7 @@ abstract class Vehiculo implements IVehiculo {
         echo "Peso: " . $obj->peso . "<br>";
         echo "Cambios de color: " . self::$numeroCambioColor . "<br>";
 
-        if (get_class($obj) == "CuatroRuedas") {
+        if (get_class($obj) == "CuatroRuedas" || get_class($obj) == "Coche" || get_class($obj) == "Camion") {
             echo "Número de puertas: " . $obj->numeroPuertas . "<br>";
         }
         if (get_class($obj) == "Coche") {
