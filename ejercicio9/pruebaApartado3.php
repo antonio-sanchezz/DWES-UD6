@@ -1,9 +1,13 @@
 <?php
-
+/*
 function __autoload($name)
 {
    include_once 'includes/class.' . $name . '.php';
-}
+}*/
+
+spl_autoload_register(function($name) {
+   include_once('includes/class.' . $name . '.php');
+});
 
 $coche1 = new Coche('Azul', 650, 0, 5);
 

@@ -1,8 +1,13 @@
 <?php
+/*
 function __autoload($name)
 {
    include_once 'includes/class.' . $name . '.php';
-}
+}*/
+
+spl_autoload_register(function($name) {
+   include_once('includes/class.' . $name . '.php');
+});
 
 $moto1 = new DosRuedas('Transparente', 1550, 400);
 
@@ -21,7 +26,7 @@ $camion1 = new Camion('Blanco', 600, 5, 50);
 
 $camion1->addPersonas(84);
 $camion1->repintar('Azul');
-$camion1->numeroPuertas = $camion1->numeroPuertas + 2;
+$camion1->numeroPuertas += 2;
 
 print_r($camion1->verAtributo($camion1));
 
