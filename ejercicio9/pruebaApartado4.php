@@ -28,6 +28,6 @@ $camion1->addPersonas(84);
 $camion1->repintar('Azul');
 $camion1->numeroPuertas += 2;
 
-print_r($camion1->verAtributo($camion1));
+print_r(Vehiculo::verAtributo($camion1));
 
 ?>

@@ -17,6 +17,6 @@ $coche1->setColor('Azul');
 $coche1->quitarCadenasNieve(4);
 $coche1->setColor('Negro');
 
-print_r($coche1->verAtributo($coche1));
+print_r(Vehiculo::verAtributo($coche1));
 
 ?>

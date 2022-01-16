@@ -4,7 +4,7 @@ abstract class Vehiculo implements IVehiculo {
 
     private string $color;
     private float $peso;
-    protected int $numeroCambioColor = 0;
+    protected static int $numeroCambioColor = 0;
 
     function __construct($color, $peso)
     {
@@ -13,7 +13,13 @@ abstract class Vehiculo implements IVehiculo {
     }
 
     public static function verAtributo($obj) {
-        return get_object_vars($obj);
+        echo "Color: " . $obj->color . "<br>";
+        echo "Peso: " . $obj->peso . "<br>";
+        echo "Cambios de color: " . self::$numeroCambioColor . "<br>";
+        echo "Número de puertas: " . $obj->numeroPuertas . "<br>";
+        echo "Número de cadenas de nieve: " . $obj->numeroCadenasNieve . "<br>";
+        echo "Cilindrada: " . $obj->cilindrada . "<br>";
+        echo "Longitud: " . $obj->longitud . "<br>";
     }
 
     public function circula() {
@@ -32,7 +38,7 @@ abstract class Vehiculo implements IVehiculo {
 
     public function setColor($color) {
         $this->color = $color;
-        $this->numeroCambioColor += 1;
+        self::$numeroCambioColor += 1;
     }
 
     public function __get($name) 
