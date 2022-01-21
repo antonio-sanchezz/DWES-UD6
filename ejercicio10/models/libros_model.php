@@ -16,11 +16,11 @@
         return $libros;
     }
 
-    function getLibro($titulo) {
+    function getLibro($id) {
         $db = getConnection();
-        $sqlQuery = "SELECT titulo, precio FROM libros WHERE titulo = ?";
+        $sqlQuery = "SELECT titulo, precio FROM libros WHERE id = ?";
         $stmt = $db->prepare($sqlQuery);
-        $stmt->bindParam(1, $titulo);
+        $stmt->bindParam(1, $id);
 
         $stmt->execute();
 
