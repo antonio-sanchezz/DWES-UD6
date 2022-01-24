@@ -18,7 +18,7 @@
 
     function getLibro($id) {
         $db = getConnection();
-        $sqlQuery = "SELECT titulo, precio FROM libros WHERE id = ?";
+        $sqlQuery = "SELECT titulo, precio, isbn FROM libros WHERE id = ?";
         $stmt = $db->prepare($sqlQuery);
         $stmt->bindParam(1, $id);
 
