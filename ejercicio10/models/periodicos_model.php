@@ -8,7 +8,7 @@
 
     function getPeriodicos() {
         $db = getConnection();
-        $result = $db->query('SELECT nombre, fecha FROM periodicos');
+        $result = $db->query('SELECT Nombre, Fecha FROM periodicos');
         $periodicos = [];
         while ($periodico = $result->fetch()) {
             $periodicos[] = $periodico;
@@ -18,7 +18,7 @@
 
     function getPeriodico($id) {
         $db = getConnection();
-        $sqlQuery = "SELECT nombre, fecha FROM periodicos WHERE id = ?";
+        $sqlQuery = "SELECT Nombre, Fecha FROM periodicos WHERE id = ?";
         $stmt = $db->prepare($sqlQuery);
         $stmt->bindParam(1, $id);
 

@@ -11,8 +11,8 @@
         </tr>
         <?php foreach ($periodicos as $periodico) {?>
             <tr>
-                <td><?php echo $periodico['nombre'];?></td>
-                <td><?php echo $periodico['fecha'];?></td>
+                <td><?php echo $periodico['Nombre'];?></td>
+                <td><?php echo $periodico['Fecha'];?></td>
             </tr>
         <?php } ?>
     </table>
