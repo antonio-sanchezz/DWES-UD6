@@ -47,25 +47,18 @@
             $receta = getReceta($id);
         }
         
-        include './views/recetasActualizar.php';
+        include './views/recetasForm.php';
     }
 
     function actualizar() {
         // Se incluye el modelo.
         require './models/recetasModel.php';
-        if (isset($_GET['id'])) {
-            $id = $_GET['id'];
-        } else if (isset($_POST['id'])) {
-            $id = $_POST['id'];
-        }
-        $receta = getReceta($id);
+        $id = $_POST['id'];
         // En $creada tenemos si se ha realizado la creación o no.
-        if (isset($_GET['actualizar'])) {
-            $actualizada = actualizarReceta($_POST['id'], $_POST['nombre'], $_POST['dificultad'], $_POST['tipoCocina'], $_POST['duracion'], $_POST['comensales'], $_POST['fechaPublicacion'], $_POST['imagen']);
-        }
-
+        $actualizada = actualizarReceta($id, $_POST['nombre'], $_POST['dificultad'], $_POST['tipoCocina'], $_POST['duracion'], $_POST['comensales'], $_POST['fechaPublicacion'], $_POST['imagen']);
+        header("Location: ?controller=recetas&action=form&id=$id");
         // La vista recibe un boolean.
-        include './views/recetasActualizar.php';
+        include './views/recetasForm.php';
     }
 
 ?>

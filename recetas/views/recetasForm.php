@@ -5,10 +5,6 @@
     <body>
         <h1>Recetas</h1>
         <?php
-        
-        $errorUpdate = "";
-
-
 
         if (isset($receta)) {
             $nombre = $receta['nombre'];
@@ -27,13 +23,12 @@
             $fechaPublicacion = "";
             $imagen = "";
         }
-
-        /*
-        if ($actualizada) {
-            echo "<p>Actualizada con éxito.</p>";
+        
+        if (isset($actualizada)) {
+            $errorUpdate = "<p>Actualizada con éxito.</p>";
         } else {
-            echo "<p>La actualización no se ha realizado.</p>";
-        }*/
+            $errorUpdate = "";
+        }
 
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
