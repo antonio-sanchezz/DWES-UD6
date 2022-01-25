@@ -42,9 +42,6 @@
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
             $receta = getReceta($id);
-        } else if (isset($_POST['id'])) {
-            $id = $_POST['id'];
-            $receta = getReceta($id);
         }
         
         include './views/recetasForm.php';
