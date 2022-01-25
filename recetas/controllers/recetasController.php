@@ -54,8 +54,6 @@
         // En $creada tenemos si se ha realizado la creación o no.
         $actualizada = actualizarReceta($id, $_POST['nombre'], $_POST['dificultad'], $_POST['tipoCocina'], $_POST['duracion'], $_POST['comensales'], $_POST['fechaPublicacion'], $_POST['imagen']);
         header("Location: ?controller=recetas&action=form&id=$id");
-        // La vista recibe un boolean.
-        include './views/recetasForm.php';
     }
 
 ?>
