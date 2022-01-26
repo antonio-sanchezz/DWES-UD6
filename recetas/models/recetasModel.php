@@ -64,15 +64,6 @@
 
         $exito = $stmt->execute();
 
-        if(!is_string($imagen)) {
-
-            // Obtenemos la ruta del archivo.
-            $target_file = "images/" . basename($imagen["name"]);
-        
-            // Introducimos el archivo en la ruta indicada.
-            move_uploaded_file($imagen["tmp_name"], $target_file);
-        }
-
         return $exito;
     }
 
