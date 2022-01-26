@@ -8,7 +8,7 @@
 
     function getRecetas() {
         $db = getConnection();
-        $result = $db->query('SELECT nombre, dificultad, tipoCocina, duracion, comensales, fechaPublicacion, imagen FROM recetas');
+        $result = $db->query('SELECT * FROM recetas');
         $recetas = [];
         while ($receta = $result->fetch()) {
             $recetas[] = $receta;
@@ -18,7 +18,7 @@
 
     function getReceta($id) {
         $db = getConnection();
-        $sqlQuery = "SELECT nombre, dificultad, tipoCocina, duracion, comensales, fechaPublicacion, imagen FROM recetas WHERE id = ?";
+        $sqlQuery = "SELECT * FROM recetas WHERE id = ?";
         $stmt = $db->prepare($sqlQuery);
         $stmt->bindParam(1, $id);
 

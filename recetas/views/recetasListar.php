@@ -4,6 +4,7 @@
     </head>
     <body>
         <h1>Recetas</h1>
+        <a href="?controller=recetas&action=form">Crear nueva receta</a>
         <table border="1">
         <tr>
             <th>Nombre</th>
@@ -12,7 +13,7 @@
             <th>Duración</th>
             <th>Comensales</th>
             <th>Fecha Publicación</th>
-            <th>Imagen</th>
+            <th>Opciones</th>
         </tr>
         <?php foreach ($recetas as $receta) {?>
             <tr>
@@ -22,7 +23,7 @@
                 <td><?php echo $receta['duracion'];?></td>
                 <td><?php echo $receta['comensales'];?></td>
                 <td><?php echo $receta['fechaPublicacion'];?></td>
-                <td><?php echo $receta['imagen'];?></td>
+                <td><a href="?controller=recetas&action=form&id=<?php echo $receta['id'];?>">Editar</a> <a href="?controller=recetas&action=eliminar&id=<?php echo $receta['id'];?>">Eliminar</a></td>
             </tr>
         <?php } ?>
     </table>

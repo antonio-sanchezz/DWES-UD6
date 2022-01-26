@@ -24,7 +24,7 @@
         // En $eliminado tenemos si se ha realizado la eliminacion o no.
         $eliminado = eliminarReceta($_GET['id']);
         // La vista recibe un boolean.
-        include './views/recetasEliminar.php';
+        header("Location: index.php");
     }
 
     function crear() {
