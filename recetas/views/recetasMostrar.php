@@ -4,6 +4,7 @@
     </head>
     <body>
         <h1>Recetas</h1>
+        <a href="index.php">Volver</a>
         <table border="1">
         <tr>
             <th>Nombre</th>

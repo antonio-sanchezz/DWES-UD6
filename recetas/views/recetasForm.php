@@ -27,10 +27,10 @@
 
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
-            echo '<form class="form-register" action="?controller=recetas&action=actualizar&id= ' . $id . '" method="POST" enctype="multipart/form-data">';
+            echo '<form class="form-register" action="?controller=recetas&action=formAction&id= ' . $id . '" method="POST" enctype="multipart/form-data">';
         } else {
             $id = "";
-            echo '<form class="form-register" action="?controller=recetas&action=crear" method="POST" enctype="multipart/form-data">';
+            echo '<form class="form-register" action="?controller=recetas&action=formAction" method="POST" enctype="multipart/form-data">';
         }
 
         ?>

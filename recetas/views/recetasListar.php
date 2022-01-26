@@ -23,7 +23,7 @@
                 <td><?php echo $receta['duracion'];?></td>
                 <td><?php echo $receta['comensales'];?></td>
                 <td><?php echo $receta['fechaPublicacion'];?></td>
-                <td><a href="?controller=recetas&action=form&id=<?php echo $receta['id'];?>">Editar</a> <a href="?controller=recetas&action=eliminar&id=<?php echo $receta['id'];?>">Eliminar</a></td>
+                <td><a href="?controller=recetas&action=mostrarUno&id=<?php echo $receta['id'];?>">Ver</a> <a href="?controller=recetas&action=form&id=<?php echo $receta['id'];?>">Editar</a> <a href="?controller=recetas&action=eliminar&id=<?php echo $receta['id'];?>">Eliminar</a></td>
             </tr>
         <?php } ?>
     </table>
