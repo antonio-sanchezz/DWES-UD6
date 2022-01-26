@@ -31,7 +31,7 @@
         // Se incluye el modelo.
         require './models/recetasModel.php';
         // En $creada tenemos si se ha realizado la creación o no.
-        $creada = crearReceta($_GET['nombre'], $_GET['dificultad'], $_GET['tipoCocina'], $_GET['duracion'], $_GET['comensales'], $_GET['fechaPublicacion'], $_GET['imagen']);
+        $creada = crearReceta($_POST['nombre'], $_POST['dificultad'], $_POST['tipoCocina'], $_POST['duracion'], $_POST['comensales'], $_POST['fechaPublicacion'], $_FILES['imagen']);
         // La vista recibe un boolean.
         include './views/recetasCrear.php';
     }
@@ -52,7 +52,7 @@
         require './models/recetasModel.php';
         $id = $_POST['id'];
         // En $creada tenemos si se ha realizado la creación o no.
-        $actualizada = actualizarReceta($id, $_POST['nombre'], $_POST['dificultad'], $_POST['tipoCocina'], $_POST['duracion'], $_POST['comensales'], $_POST['fechaPublicacion'], $_POST['imagen']);
+        $actualizada = actualizarReceta($id, $_POST['nombre'], $_POST['dificultad'], $_POST['tipoCocina'], $_POST['duracion'], $_POST['comensales'], $_POST['fechaPublicacion'], $_FILES['imagen']);
         header("Location: ?controller=recetas&action=form&id=$id");
     }
 

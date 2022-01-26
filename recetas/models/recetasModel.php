@@ -56,9 +56,22 @@
         $stmt->bindParam(4, $duracion);
         $stmt->bindParam(5, $comensales);
         $stmt->bindParam(6, $fechaPublicacion);
-        $stmt->bindParam(7, $imagen);
+        if (is_string($imagen)) {
+            $stmt->bindParam(7, $imagen);
+        } else {
+            $stmt->bindParam(7, $imagen['name']);
+        }
 
         $exito = $stmt->execute();
+
+        if(!is_string($imagen)) {
+
+            // Obtenemos la ruta del archivo.
+            $target_file = "images/" . basename($imagen["name"]);
+        
+            // Introducimos el archivo en la ruta indicada.
+            move_uploaded_file($imagen["tmp_name"], $target_file);
+        }
 
         return $exito;
     }
@@ -76,10 +89,23 @@
         $stmt->bindParam(4, $duracion);
         $stmt->bindParam(5, $comensales);
         $stmt->bindParam(6, $fechaPublicacion);
-        $stmt->bindParam(7, $imagen);
+        if (is_string($imagen)) {
+            $stmt->bindParam(7, $imagen);
+        } else {
+            $stmt->bindParam(7, $imagen['name']);
+        }
         $stmt->bindParam(8, $id);
 
         $exito = $stmt->execute();
+
+        if(!is_string($imagen)) {
+
+            // Obtenemos la ruta del archivo.
+            $target_file = "images/" . basename($imagen["name"]);
+        
+            // Introducimos el archivo en la ruta indicada.
+            move_uploaded_file($imagen["tmp_name"], $target_file);
+        }
 
         return $exito;
     }

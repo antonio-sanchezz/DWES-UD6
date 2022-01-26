@@ -13,5 +13,6 @@
         }
         
         ?>
+        <a href="index.php">Volver al listado</a>
     </body>
 </html>

@@ -4,6 +4,7 @@
     </head>
     <body>
         <h1>Recetas</h1>
+        <a href="index.php">Volver</a>
         <?php
 
         if (isset($receta)) {
@@ -23,18 +24,10 @@
             $fechaPublicacion = "";
             $imagen = "";
         }
-        
-        if (isset($actualizada)) {
-            $errorUpdate = "<p>Actualizada con éxito.</p>";
-        } else {
-            $errorUpdate = "";
-        }
 
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
             echo '<form class="form-register" action="?controller=recetas&action=actualizar&id= ' . $id . '" method="POST" enctype="multipart/form-data">';
-        } else if (isset($_POST['id'])) {
-            $id = $_POST['id'];
         } else {
             $id = "";
             echo '<form class="form-register" action="?controller=recetas&action=crear" method="POST" enctype="multipart/form-data">';
@@ -52,6 +45,7 @@
             <input type="number" name="comensales" placeholder="Comensales" class="input-48" value="<?php echo $comensales;?>" required >
             <input type="date" name="fechaPublicacion" placeholder="Fecha" class="input-100" value="<?php echo $fechaPublicacion;?>" required>
             <?php
+            if (isset($_GET['id'])) {
                 if (file_exists("images/" . $imagen)) {
                     if(empty($imagen)) {
                         echo "<img src='images/no-image.png'  name='avatarActual' width=500px>";
@@ -61,10 +55,18 @@
                 } else {
                     echo "<img src='images/no-image.png'  name='avatarActual' width=500px>";
                 }
+            }
             ?>
-            <input type="file" name="avatar" accept="image/png, image/jpeg" class="input-100">
-            <input type="submit" value="Editar" class="btn-enviar">
-            <div id="errores"><?php echo $errorUpdate; ?></div>
+            <input type="file" name="imagen" accept="image/png, image/jpeg" class="input-100">
+            
+            <?php
+                if (isset($_GET['id'])) {
+                    $id = $_GET['id'];
+                    echo '<input type="submit" value="Editar" class="btn-enviar">';
+                } else {
+                    echo '<input type="submit" value="Crear" class="btn-enviar">';
+                }
+            ?>
         </div>
     </form>
     </body>
