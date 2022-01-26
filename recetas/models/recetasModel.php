@@ -56,10 +56,20 @@
         $stmt->bindParam(4, $duracion);
         $stmt->bindParam(5, $comensales);
         $stmt->bindParam(6, $fechaPublicacion);
+
         if (is_string($imagen)) {
             $stmt->bindParam(7, $imagen);
         } else {
             $stmt->bindParam(7, $imagen['name']);
+        }
+
+        if(!is_string($imagen)) {
+
+            // Obtenemos la ruta del archivo.
+            $target_file = "images/" . basename($imagen["name"]);
+        
+            // Introducimos el archivo en la ruta indicada.
+            move_uploaded_file($imagen["tmp_name"], $target_file);
         }
 
         $exito = $stmt->execute();
