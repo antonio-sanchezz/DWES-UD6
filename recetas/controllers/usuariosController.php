@@ -19,6 +19,8 @@
             session_start();
             $_SESSION['username'] = $_POST['username'];
             header("Location: ?controller=recetas&action=ListarTodos");
+        } else {
+            header("Location: ?controller=usuarios&action=formLogin");
         }
         
     }

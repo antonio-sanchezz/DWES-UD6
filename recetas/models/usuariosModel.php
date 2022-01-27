@@ -35,10 +35,13 @@
     */
     function login($username, $password) {
 
+        $result = false;
         $user = getUser($username);
 
-        // Realizamos la verificacion de la contraseña con el usuario.
-        $result = password_verify($password, $user['password']);
+        if ($user) {
+            // Realizamos la verificacion de la contraseña con el usuario.
+            $result = password_verify($password, $user['password']);
+        }      
 
         return $result;
     }
