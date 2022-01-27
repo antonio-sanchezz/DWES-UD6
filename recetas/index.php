@@ -6,9 +6,9 @@
 // La carpeta donde buscaremos los controladores.
 define ('CONTROLLERS_FOLDER', "controllers/");
 // Si no se indica un controlador, este es el controlador que se usará.
-define ('DEFAULT_CONTROLLER', "recetas");
+define ('DEFAULT_CONTROLLER', "usuarios");
 // Si no se indica una acción, esta acción es la que se usará.
-define ('DEFAULT_ACTION', "listarTodos");
+define ('DEFAULT_ACTION', "formLogin");
 
 //Obtenemos el controlador
 //Si el usuario no lo introduce, seleccionamos el de por defecto.

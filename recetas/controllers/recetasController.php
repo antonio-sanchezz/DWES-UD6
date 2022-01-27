@@ -1,6 +1,14 @@
 <?php
 
+    session_start();
+
+    // Comprobamos si hay una sesión o no iniciada.
+    if (!isset($_SESSION['username'])) {
+        header("Location: ?controller=usuarios&action=formLogin");
+    }
+
     function listarTodos() {
+
         // Se incluye el modelo.
         require './models/recetasModel.php';
 
@@ -12,6 +20,7 @@
     }
 
     function mostrarUno() {
+
         // Se incluye el modelo.
         require './models/recetasModel.php';
 
@@ -23,6 +32,7 @@
     }
 
     function eliminar() {
+
         // Se incluye el modelo.
         require './models/recetasModel.php';
         
@@ -34,6 +44,7 @@
     }
 
     function form() {
+
         // Se incluye el modelo.
         require './models/recetasModel.php';
 
@@ -47,7 +58,7 @@
     }
 
     function formAction() {
-
+   
         // Se incluye el modelo.
         require './models/recetasModel.php';
 
