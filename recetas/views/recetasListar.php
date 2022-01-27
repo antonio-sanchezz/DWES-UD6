@@ -5,6 +5,7 @@
     <body>
         <h1>Recetas</h1>
         <a href="?controller=recetas&action=form">Crear nueva receta</a>
+        <a href="?controller=usuarios&action=cerrarSesion">Cerrar sesión</a>
         <table border="1">
         <tr>
             <th>Nombre</th>
