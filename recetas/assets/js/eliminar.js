@@ -6,7 +6,7 @@ $(function(){
         $.ajax({
             url: "?controller=recetas&action=eliminar&id="+ id,
             cache: false,
-            success:function(result){
+            success:function(){
                 tr.remove();
             }
         });

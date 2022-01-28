@@ -1,29 +1,20 @@
-<html>
-    <head>
-        <title>Recetas</title>
-    </head>
-    <body>
-        <h1>Recetas</h1>
-        <a href="index.php">Volver</a>
-        <table border="1">
-        <tr>
-            <th>Nombre</th>
-            <th>Dificultad</th>
-            <th>Tipo Cocina</th>
-            <th>Duración</th>
-            <th>Comensales</th>
-            <th>Fecha Publicación</th>
-            <th>Imagen</th>
-        </tr>
-            <tr>
-                <td><?php echo $receta['nombre'];?></td>
-                <td><?php echo $receta['dificultad'];?></td>
-                <td><?php echo $receta['tipoCocina'];?></td>
-                <td><?php echo $receta['duracion'];?></td>
-                <td><?php echo $receta['comensales'];?></td>
-                <td><?php echo $receta['fechaPublicacion'];?></td>
-                <td><?php echo $receta['imagen'];?></td>
-            </tr>
-    </table>
-    </body>
-</html>
+<table border="1">
+<tr>
+    <th>Nombre</th>
+    <th>Dificultad</th>
+    <th>Tipo Cocina</th>
+    <th>Duración</th>
+    <th>Comensales</th>
+    <th>Fecha Publicación</th>
+    <th>Imagen</th>
+</tr>
+    <tr>
+        <td><?php echo $receta['nombre'];?></td>
+        <td><?php echo $receta['dificultad'];?></td>
+        <td><?php echo $receta['tipoCocina'];?></td>
+        <td><?php echo $receta['duracion'];?></td>
+        <td><?php echo $receta['comensales'];?></td>
+        <td><?php echo $receta['fechaPublicacion'];?></td>
+        <td><?php echo $receta['imagen'];?></td>
+    </tr>
+</table>
