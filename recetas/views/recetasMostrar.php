@@ -1,20 +1,11 @@
-<table border="1">
-<tr>
-    <th>Nombre</th>
-    <th>Dificultad</th>
-    <th>Tipo Cocina</th>
-    <th>Duración</th>
-    <th>Comensales</th>
-    <th>Fecha Publicación</th>
-    <th>Imagen</th>
-</tr>
-    <tr>
-        <td><?php echo $receta['nombre'];?></td>
-        <td><?php echo $receta['dificultad'];?></td>
-        <td><?php echo $receta['tipoCocina'];?></td>
-        <td><?php echo $receta['duracion'];?></td>
-        <td><?php echo $receta['comensales'];?></td>
-        <td><?php echo $receta['fechaPublicacion'];?></td>
-        <td><?php echo $receta['imagen'];?></td>
-    </tr>
-</table>
+<script type="text/javascript" src="./assets/js/detalle.js"></script>
+<div>
+    <span class="close">&times;</span>
+    <p>Nombre: <?php echo $receta['nombre'];?></p>
+    <p>Dificultad: <?php echo $receta['dificultad'];?></p>
+    <p>Tipo de Cocina: <?php echo $receta['tipoCocina'];?></p>
+    <p>Duración: <?php echo $receta['duracion'];?></p>
+    <p>Comensales: <?php echo $receta['comensales'];?></p>
+    <p>Fecha de Publicación: <?php echo $receta['fechaPublicacion'];?></p>
+    <img src="images/<?php echo $receta['imagen'];?>"/>
+</div>

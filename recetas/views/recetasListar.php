@@ -4,6 +4,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script type="text/javascript" src="./assets/js/eliminar.js"></script>
         <script type="text/javascript" src="./assets/js/detalle.js"></script>
+        <link rel="stylesheet" href="assets/css/style.css">
     </head>
     <body>
         <h1>Recetas</h1>
@@ -31,6 +32,8 @@
             </tr>
         <?php } ?>
     </table>
-    <div class="modal"></div>
+    <div class="modal">
+        <div class="modal-content"></div>
+    </div>
     </body>
 </html>

@@ -10,10 +10,15 @@ $(function(){
             dataType:"html",
             data:{id:idReceta},
             success:function(data){
-                $(".modal").html(data);
+                $(".modal-content").html(data);
+                $(".modal").show();
             }
         });
 
+    });
+
+    $('.close').click(function(){
+        $(".modal").hide();
     });
 
 });
