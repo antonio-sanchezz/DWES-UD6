@@ -14,7 +14,7 @@
         <label>Buscador: </label>
         <input type="text" id="buscador" name="buscador" placeholder="Nombre de la receta">
         <div id="resultados"></div>
-        <table border="1">
+        <table id="table1" border="1">
         <tr>
             <th>Nombre</th>
             <th>Dificultad</th>

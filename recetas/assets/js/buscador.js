@@ -12,8 +12,10 @@ $(function(){
             success: function(data){
                 if (buscar != "") {
                     $("#resultados").html(data);
+                    $('#table1').hide();
                 } else {
                     $("#resultados").empty();
+                    $('#table1').show();
                 }
             }
         })
