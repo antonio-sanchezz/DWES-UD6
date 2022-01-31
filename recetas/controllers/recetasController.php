@@ -7,6 +7,16 @@
         header("Location: ?controller=usuarios&action=formLogin");
     }
 
+    function buscadorRecetas() {
+        // Se incluye el modelo.
+        require './models/recetasModel.php';
+
+        // En $recetas tenemos un array con todos las recetas gracias al modelo.
+        $nombre = $_GET['nombre'];
+        $recetas = buscarReceta($nombre);
+        include './views/busqueda.php';
+    }
+
     function listarTodos() {
 
         // Se incluye el modelo.

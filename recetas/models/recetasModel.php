@@ -29,6 +29,16 @@
         return $receta;
     }
 
+    function buscarReceta($nombre) {
+        $db = getConnection();
+        $result = $db->query("SELECT * FROM recetas WHERE nombre LIKE '%$nombre%'");
+        $recetas = [];
+        while ($receta = $result->fetch()) {
+            $recetas[] = $receta;
+        }
+        return $recetas;
+    }
+
     function eliminarReceta($id) {
 
         $exito = false;
